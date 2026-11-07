@@ -1,0 +1,11 @@
+{
+  "protected_files": 14,
+  "changed_protected_files": [],
+  "workflow_families": 12,
+  "local_links_checked": 12,
+  "production_changes_in_task": false,
+  "model_trials_in_task": false,
+  "plan_audit_verdict": "REVISE",
+  "supervisor_dispositions": 2,
+  "independent_reaudit": false
+}

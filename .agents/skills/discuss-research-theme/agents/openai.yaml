@@ -1,0 +1,4 @@
+interface:
+  display_name: "Discuss Research Theme"
+  short_description: "Compare and select an initial research theme"
+  default_prompt: "Use $discuss-research-theme to compare candidate research themes and help me select one before initial setup."

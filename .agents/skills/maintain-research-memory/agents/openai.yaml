@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain Research Memory"
+  short_description: "Update compact research memory records."
+  default_prompt: "Use $maintain-research-memory to record findings from the latest experiment."

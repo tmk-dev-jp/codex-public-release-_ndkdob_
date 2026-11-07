@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run One Agent-Led Loop"
+  short_description: "Complete one loop with delegated research judgment."
+  default_prompt: "Use $run-one-agent-led-loop to delegate scientific decisions and complete exactly one research experiment."

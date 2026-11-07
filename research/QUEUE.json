@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "items": [
+    {
+      "id": "Q-001",
+      "status": "draft",
+      "title": "<first experiment title>",
+      "hypothesis": "<falsifiable hypothesis>",
+      "falsifier": "<observation that would reject or narrow the hypothesis>",
+      "minimal_test": "<next adequate test for the research decision; smoke checks readiness only, with substantive evidence identified in GOAL.md>",
+      "primary_metric": "<metric>",
+      "baseline_id": null,
+      "claim_ids": [
+        "C-001"
+      ],
+      "information_gain": 3,
+      "decision_impact": 3,
+      "compute_cost": 1,
+      "implementation_risk": 1
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "id": "BASE-001",
+  "title": "<baseline title>",
+  "source": {
+    "type": "paper",
+    "reference_id": null,
+    "url": null,
+    "local_path": null,
+    "approved_reading_scope": [
+      "metadata and abstract"
+    ]
+  },
+  "implementation": {
+    "integration_target": "src",
+    "planned_paths": []
+  },
+  "experiment": {
+    "task_from_source": "derive from approved source",
+    "primary_metric": "<metric>",
+    "dataset_assumptions": "<dataset or manifest facts>"
+  },
+  "notes": ""
+}

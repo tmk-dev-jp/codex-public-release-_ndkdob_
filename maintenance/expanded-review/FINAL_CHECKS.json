@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-22",
+  "regression": {
+    "passed": 544,
+    "deselected": 2,
+    "subtests_passed": 13
+  },
+  "validator_warnings": 0,
+  "model_efficacy_measured": false,
+  "independent_reaudit_after_correction": false,
+  "source_counts": {
+    "additional_repositories": 11,
+    "additional_papers": 15
+  },
+  "final_sha256": {
+    "scripts/research_decision.py": "5143f66e680b65b7c97f666d831178684853fe8f5756062ff9740a5bcf0ce09c",
+    "scripts/decision_integrity.py": "501d04a9132b252f8ce7ea373786f9c996f62643189c1135ac49599da26449ae",
+    "scripts/accept_human_interpretation.py": "65be04dfce43e8284318b44da9e8a442e2fdcd752e09e22ed6ee0a29333d57a7",
+    "scripts/approve_plan.py": "2665cdce6ee2021c9f0ef2a43b07e264574fac89b06bb89c3008f233fce38151",
+    "scripts/workflow.py": "17d468036d8fd191d864552e2d671203b0deb94375d7434cad9fe74d122fb0ad",
+    "scripts/next_autonomous_step.py": "47c8305e9fee7e411a65123f6fefe11f35a514cbf51bf345b34d4e8931e3db5c",
+    "scripts/next_unattended_loop_step.py": "dd92c94a14d7b1475c904584e4b902ac1f5d5edd53b59a782f283f26f39963cd",
+    "scripts/evaluate_sycophancy.py": "857cf31c3810f8642c5ae4150f98dd6102499288a8d91efab41983892b1a0d3a",
+    "tests/unit/test_agent_led_loop.py": "eed23534de50df28cdc5a55bd4d3c80e94f8446e472ae6ed9fd68cb191e7ecb4",
+    "tests/unit/test_sycophancy_evaluation.py": "815292d6430ad1af2d386c2a404f001ca136c3954f7220fb2f03d3fd92a3a01e",
+    "tests/fixtures/sycophancy/cases.json": "a35e8d0608ad036403495d750c00f37c67769cb0e9cfaa03f158fd5792dad3bc",
+    ".agents/skills/run-one-agent-led-loop/references/DECISIONS.md": "f9e61e115394e2bb63cf8775010eb020997df0d03e687f1e4e25e68218a6c2a4"
+  }
+}

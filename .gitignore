@@ -1,0 +1,44 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.DS_Store
+
+# Local backup from the human-operated boundary installer
+.codex/agent-boundary-backup.json
+
+# Model weights, tensor dumps, and exported models
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.npy
+*.npz
+
+# User-managed or generated large content
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+references/inbox/*
+references/originals/*
+!references/inbox/.gitkeep
+!references/originals/.gitkeep
+artifacts/results/*
+!artifacts/results/.gitkeep
+artifacts/checkpoints/*
+!artifacts/checkpoints/.gitkeep
+
+# Generated review bundles and active experiment outputs
+review/bundles/*
+!review/bundles/AGENTS.md
+!review/bundles/.gitkeep
+review/completed/*
+!review/completed/.gitkeep
+review/repairs/*
+review/compression/*

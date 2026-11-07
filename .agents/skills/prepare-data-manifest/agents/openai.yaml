@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Data Manifest"
+  short_description: "Prepare dataset manifest facts."
+  default_prompt: "Use $prepare-data-manifest to prepare data/MANIFEST.json for this research project."

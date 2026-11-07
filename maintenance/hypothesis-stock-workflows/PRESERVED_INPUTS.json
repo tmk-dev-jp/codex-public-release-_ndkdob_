@@ -1,0 +1,16 @@
+{
+  "research/STATE.json": "5b37bc076b74dd3757f92d37acef6646c91c47e3ad7246ae11236549268c4340",
+  "research/GOAL.md": "a8f5645dfdcf7fdcbac5813ca59c5391e062cb03cfcc396b7a999a1e5d501e55",
+  "research/QUEUE.json": "e2bbd51ffa50e20b6f1701bad63fd187138d9912f595542d84c36bedeb598511",
+  "research/ideas/IDEA_BANK.jsonl": "fde34e94dda55a05016c7bf15c82602d791a0ca97a5837eef26c436553774b17",
+  "research/novelty/NOVELTY_CHECKS.jsonl": "25659521f2bfe2e3ed74e2a2f67527adbb8a5298c45e2d38d4c67c8d4563bb44",
+  ".agents/skills/replenish-research-hypotheses/SKILL.md": "6840881b794814a7b4d43e83ad9345449fad60d14dbf1ea362af2634f1ee5251",
+  ".agents/skills/update-research-direction/SKILL.md": "276d69ab91778199b766d7416ecb7b53fd640c97bdd3a72159bc22bdc7689d61",
+  ".agents/skills/select-research-branch/SKILL.md": "b4ee6f5476e7e5cd12d85c3ad411f34df2005b523c4402941c1f1143a6dcc916",
+  ".agents/skills/audit-novelty/SKILL.md": "fb88275b9ac3e7c260637bcd9d3d3d1243cdab0e16480582f36c853ea51726f9",
+  "scripts/research_memory.py": "821bb7840b7426aefc0e3c9a7df90927565632240a457c648dbf1e1d31565d28",
+  "scripts/next_unattended_loop_step.py": "dd92c94a14d7b1475c904584e4b902ac1f5d5edd53b59a782f283f26f39963cd",
+  "scripts/new_experiment.py": "b3cf1a9a2a84b7d84445ffaa5ec520f9ca39e03f98efab634d03b85cfe012883",
+  "automation/INDEPENDENT_JUDGMENT.md": "cee0bf2b973f0b7e53d76472187e7baf3b96d12a4113a805d6bdb3f0b680b4ea",
+  "automation/SCIENTIFIC_CONTRIBUTION.md": "dd951f8fe8ab2886e171af69c18fd902bb86a78599eed1978728770b62e03a2b"
+}

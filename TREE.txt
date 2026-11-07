@@ -1,0 +1,187 @@
+.
+├── AGENTS.md                         # Small repository-wide rules
+├── README.md
+├── Makefile
+├── pyproject.toml
+├── .codex/
+│   ├── config.toml                   # Hooks; no project-wide subagent limits
+│   ├── hooks.json                    # Advisory stop validation
+│   ├── hooks/stop_validate.py
+│   └── agents/                       # Planner, plan auditor, tiered implementers, evaluator
+├── .agents/skills/
+│   ├── set-subagent-defaults/SKILL.md # Project default model and reasoning for subagents
+│   ├── compress-audit-material/SKILL.md # Same-phase audit size recovery
+│   ├── checkpoint-reproducibility/SKILL.md # Minimal local reproducibility commit and tag
+│   ├── migrate-research-project/     # Read-only source discovery and approved migration
+│   │   ├── SKILL.md
+│   │   └── references/MIGRATION.md
+│   ├── plan-experiment/SKILL.md
+│   ├── configure-hypothesis-policy/SKILL.md
+│   ├── scan-research-landscape/SKILL.md
+│   ├── replenish-research-hypotheses/SKILL.md # Refill an exhausted unattended queue
+│   ├── audit-novelty/SKILL.md
+│   ├── select-research-branch/SKILL.md
+│   ├── run-autonomous-loop/SKILL.md
+│   ├── run-one-unattended-loop/SKILL.md # Explicit-only single experiment loop
+│   ├── run-one-agent-led-loop/         # Separate loop with source-backed scientific decisions
+│   ├── audit-experiment-plan/SKILL.md # Independent metric-gaming audit
+│   ├── review-experiment-plan/SKILL.md
+│   ├── approve-or-revise-plan/SKILL.md
+│   ├── revise-experiment-plan/SKILL.md
+│   ├── discuss-implementation-design/SKILL.md
+│   ├── implement-experiment/
+│   │   ├── SKILL.md
+│   │   └── references/RESEARCH_CODE_POLICY.md
+│   ├── audit-experiment-implementation/SKILL.md # Independent pre-run implementation audit
+│   ├── run-experiment/SKILL.md
+│   ├── audit-experiment-integrity/SKILL.md
+│   ├── review-experiment-result/SKILL.md
+│   ├── request-human-result-interpretation/SKILL.md
+│   ├── update-research-direction/SKILL.md
+│   ├── maintain-research-memory/SKILL.md
+│   ├── monitor-experiment/SKILL.md
+│   ├── select-next-experiment/SKILL.md
+│   ├── evaluate-experiment/SKILL.md
+│   └── debug-failure/SKILL.md
+├── automation/
+│   ├── AGENTS.md
+│   ├── INDEPENDENT_JUDGMENT.md        # Evidence-first decisions and neutral agent handoffs
+│   ├── SCIENTIFIC_CONTRIBUTION.md     # Source facts, advances and rival predictions
+│   ├── ONE_CYCLE_PROMPT.md
+│   ├── AUTONOMOUS_LOOP_PROMPT.md
+│   └── UNATTENDED_LOOP_PROMPT.md
+├── configs/
+│   ├── AGENTS.md
+│   ├── templates/                    # Bounded smoke, pilot, and gated full configs
+│   └── experiments/                  # One locked config; optional matched comparison
+├── src/
+│   ├── AGENTS.md
+│   └── dl_research/
+│       ├── data/                     # BaseDataLoader and explicit factory
+│       ├── models/                   # BaseModel and explicit factory
+│       ├── training/                 # Silent aggregate-only Trainer
+│       ├── evaluation/               # Silent aggregate-only Tester
+│       ├── experiment/               # Policy gates, sequential comparisons and artifact checks
+│       └── cli/                      # One-line command adapters
+├── research/
+│   ├── AGENTS.md
+│   ├── GOAL.md
+│   ├── PROPOSED_METHOD.md
+│   ├── TRAINING_CONTROLS.json        # Locked non-core LR and batch-size controls
+│   ├── STATE.json
+│   ├── QUEUE.json
+│   ├── CONTEXT.md                    # Generated compact entry point
+│   ├── CLAIMS.jsonl
+│   ├── EVIDENCE.jsonl
+│   ├── SOURCES.jsonl
+│   ├── DECISIONS.md
+│   ├── memory/                       # Durable insights, dead ends, and questions
+│   ├── ideas/IDEA_BANK.jsonl         # Candidate hypotheses and branch states
+│   ├── novelty/NOVELTY_CHECKS.jsonl  # Compact novelty audit records
+│   └── planning/
+│       ├── AGENTS.md
+│       └── HYPOTHESIS_POLICY.md
+├── maintenance/                      # Separate maintenance handoff, not research state
+│   ├── AI_DISCOVERY_IMPLEMENTATION_PLAN.md # Literature-grounded contribution contract plan
+│   ├── AI_RESEARCH_LITERATURE_FOUNDATIONS.md # Seven foundational papers
+│   ├── AI_RESEARCH_LITERATURE_RECENT.md # Eight recent work families
+│   ├── AI_RESEARCH_LITERATURE_BENCHMARKS.md # Four capability evaluations
+│   ├── expanded-review/              # Additional source survey, plan and independent audits
+│   ├── TASK.template.json
+│   ├── TASK.json                      # Editable current work notes, created on demand
+│   ├── HANDOFF.json                   # Script-generated fingerprints
+│   └── HANDOFF.md                     # Bounded entry for the next session
+├── experiments/
+│   ├── AGENTS.md
+│   ├── active/                       # At most one active experiment
+│   ├── completed/                    # Cold records; use DIGEST first
+│   ├── aborted/                      # Created on explicit abort; not accepted evidence
+│   ├── templates/
+│   │   └── COMPARISON.json           # Optional same-hypothesis arms, conditions and seeds
+│   ├── INDEX.json
+│   ├── LEDGER.jsonl                  # Compact completed-experiment ledger
+│   └── DIGEST.md
+├── data/
+│   ├── AGENTS.md
+│   ├── raw/                          # Immutable user-managed source data
+│   ├── processed/                    # Reproducible derivatives
+│   └── MANIFEST.example.json
+├── artifacts/
+│   ├── AGENTS.md
+│   ├── checkpoints/
+│   └── results/                      # Metrics, manifest, best checkpoint, failure-only error
+├── review/
+│   ├── bundles/AGENTS.md             # Closed plan, implementation, and result review inputs
+│   └── completed/
+├── references/
+│   ├── AGENTS.md
+│   ├── inbox/
+│   ├── originals/
+│   ├── records/
+│   ├── templates/REFERENCE.md
+│   └── INDEX.json
+├── scripts/
+│   ├── compress_audit_material.py    # Lossless packing and guarded unaccepted report shortening
+│   ├── reproducibility_checkpoint.py # Scoped reproducibility checkpoint
+│   ├── update_template.py           # Conflict-checked updates from public GitHub tags or local Git
+│   ├── migration_source.py          # Bounded source reads filtered by source .gitignore
+│   ├── maintenance_handoff.py         # Scoped maintenance snapshots and freshness checks
+│   ├── AGENTS.md
+│   ├── new_experiment.py
+│   ├── scope.py                     # Scope and planning-read budget validation
+│   ├── implementation_delta.py      # Declared and observed experiment code delta
+│   ├── lock_plan.py
+│   ├── build_plan_review_bundle.py
+│   ├── accept_plan_audit.py
+│   ├── mark_implemented.py
+│   ├── approve_full.py
+│   ├── approve_plan.py
+│   ├── return_plan_to_draft.py
+│   ├── run_experiment.py
+│   ├── abort_comparison.py            # Explicitly close failed comparisons; keep all results
+│   ├── build_human_result_packet.py
+│   ├── accept_human_interpretation.py
+│   ├── tune_training_controls.py
+│   ├── research_memory.py
+│   ├── monitor_experiment.py
+│   ├── next_autonomous_step.py
+│   ├── next_unattended_loop_step.py
+│   ├── next_agent_led_loop_step.py    # Separate one-target route with delegated judgment
+│   ├── research_decision.py           # Evidence-linked decisions and worker recovery handles
+│   ├── decision_integrity.py         # Acceptance intent, receipt and copied-result integrity
+│   ├── evaluate_sycophancy.py         # Offline user/peer-pressure diagnostic and scorer
+│   ├── sycophancy_study.py            # Frozen guidance comparison, attempt records and human review
+│   ├── run_sycophancy_codex.py        # Fixed Luna max comparison through fresh Codex CLI sessions
+│   ├── next_agent_action.py          # Machine checks and resume routing before delegation
+│   ├── repair_context.py             # Bounded isolated repair input and compact status
+│   ├── build_decision_facts.py       # Locked metric comparison and input hashes
+│   ├── suggest_novelty_axes.py
+│   ├── build_review_bundle.py
+│   ├── build_implementation_review_bundle.py
+│   ├── accept_implementation_audit.py
+│   ├── accept_evaluation.py
+│   ├── finalize_experiment.py
+│   ├── build_context.py
+│   ├── build_digest.py
+│   ├── set_agent_boundary.py         # Human-operated Codex filesystem boundary setup
+│   └── validate.py
+├── schemas/
+├── tests/
+│   ├── unit/
+│   └── smoke/
+└── human/
+    ├── RESEARCH_AGENT_IMPROVEMENTS.ja.md # Literature-informed decision and recovery changes
+    ├── AI_DISCOVERY_REVIEW.ja.md       # Nineteen-paper discovery review and implementation
+    ├── SYCOPHANCY_EVALUATION.ja.md     # User/peer-pressure diagnostic protocol
+    ├── REPRODUCIBILITY.ja.md
+    ├── UPDATE_TEMPLATE.ja.md
+    ├── README.ja.md
+    ├── QUICKSTART.ja.md
+    ├── FIRST_EXPERIMENT.ja.md
+    ├── MIGRATE_RESEARCH.ja.md
+    ├── RESEARCH_LOOP.ja.md
+    ├── AUTONOMOUS_LOOP.ja.md
+    ├── UNATTENDED_LOOP.ja.md
+    ├── MANUAL.ja.md
+    ├── templates/
+    └── TREE.ja.txt

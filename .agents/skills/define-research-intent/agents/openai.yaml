@@ -1,0 +1,4 @@
+interface:
+  display_name: "Define Research Intent"
+  short_description: "Prepare goal and first queue."
+  default_prompt: "Use $define-research-intent to write the initial research goal and first queue item."

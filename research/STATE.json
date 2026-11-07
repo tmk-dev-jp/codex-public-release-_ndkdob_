@@ -1,0 +1,84 @@
+{
+  "schema_version": "4.2",
+  "project_id": "<project-id>",
+  "project_status": "setup",
+  "active_experiment": null,
+  "phase": null,
+  "stage": null,
+  "review_required": false,
+  "latest_completed_experiment": null,
+  "baseline_experiment": null,
+  "active_claim_ids": [
+    "C-001"
+  ],
+  "active_evidence_ids": [],
+  "approvals": {
+    "full_training_experiment_id": null
+  },
+  "budgets": {
+    "max_active_experiments": 1,
+    "max_comparison_runs": 24,
+    "max_context_chars": 9000,
+    "max_agent_file_chars": 1400,
+    "max_experiment_plan_words": 700,
+    "max_experiment_conclusion_words": 400,
+    "max_plan_audit_chars": 9000,
+    "max_plan_audit_output_words": 250,
+    "max_phase_subagents": 1,
+    "max_model_escalations": 1,
+    "max_scope_files": 10,
+    "max_planning_python_reads": 3,
+    "max_implementation_entry_python_reads": 3,
+    "max_completed_digest_rows": 20,
+    "max_agent_chain_chars": 3200,
+    "max_skill_chars": 2200
+  },
+  "execution_policy": {
+    "smoke": {
+      "max_epochs": 1,
+      "max_train_batches": 2,
+      "max_validation_batches": 2,
+      "max_test_batches": 2
+    },
+    "pilot": {
+      "max_epochs": 5,
+      "max_train_batches": 20,
+      "max_validation_batches": 10,
+      "max_test_batches": 10
+    },
+    "full": {
+      "requires_explicit_approval": true
+    }
+  },
+  "review_policy": {
+    "independent_stages": [
+      "pilot",
+      "full"
+    ],
+    "allow_local_smoke_review": true
+  },
+  "unattended_loop": {
+    "status": "idle",
+    "target_experiment": null,
+    "last_mode": null
+  },
+  "next_action": {
+    "mode": "initial_setup",
+    "queue_id": "Q-001",
+    "objective": "Complete initial setup before planning the first smoke experiment."
+  },
+  "code_policy": {
+    "mode": "research_minimal",
+    "automatic_retries": 0,
+    "progress_output": false,
+    "retain_batch_or_epoch_history": false,
+    "error_artifact": "compact_failure_only",
+    "required_checks": [
+      "configuration",
+      "data_and_model_contracts",
+      "non_empty_splits",
+      "finite_loss_and_gradients",
+      "locked_plan_and_artifact_hashes"
+    ]
+  }
+}

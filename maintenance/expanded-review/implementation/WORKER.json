@@ -1,0 +1,10 @@
+{
+  "worker": "/root/expanded_implementation",
+  "profile": "gpt-6-astra/high",
+  "fresh_context": true,
+  "read_only": false,
+  "reports": [
+    "IMPLEMENTATION_REPORT.md",
+    "CORRECTION_REPORT.md"
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scan Research Landscape"
+  short_description: "Map approved sources into research gaps."
+  default_prompt: "Use $scan-research-landscape to map gaps within the approved source scope."

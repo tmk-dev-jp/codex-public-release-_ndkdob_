@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apply Research Loop Improvement"
+  short_description: "Complete requested template improvements and checks."
+  default_prompt: "Use $apply-research-loop-improvement to implement the requested template change and complete relevant checks."

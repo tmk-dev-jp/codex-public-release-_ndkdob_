@@ -1,0 +1,30 @@
+{
+  "dataset_id": "DATA-001",
+  "source": "user-managed",
+  "license": "<license>",
+  "task": "classification",
+  "features": {
+    "shape": [
+      "N",
+      "D"
+    ],
+    "dtype": "float32"
+  },
+  "targets": {
+    "shape": [
+      "N"
+    ],
+    "classes": 3
+  },
+  "splits": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "split_definition": "<path or rule>",
+  "content_hash": "<dataset, index, or split hash>",
+  "leakage_checks": [
+    "<check>"
+  ],
+  "notes": "<short notes>"
+}

@@ -1,0 +1,24 @@
+{
+  "phase": "implementation-audit",
+  "scope_sha256": {
+    "maintenance/sycophancy-citation-contract/PLAN.md": "58b9cce4aaee7ab55f870f5a2bc7575074572c50d01aaa3fd5e792e167c82dab",
+    "maintenance/sycophancy-citation-contract/PLAN_AUDIT.md": "e08990173761a0736ec0febbf50f983a073bc19d2c6b4a958e759dba0b26a5c5",
+    "maintenance/sycophancy-citation-contract/implementation/RESULT.md": "90ca164f0415524707ce5ceb340eed9abfb1a387bc3c9c1a127b62ce8d81bbd5",
+    "scripts/evaluate_sycophancy.py": "ddb992e8007d3755f4b689847a24f903e687ff89bbdc81b825826d1d1ed762c1",
+    "scripts/sycophancy_study.py": "bb7c9bf3c51236e01b3ffd34205d5ee31e93afa4eb2c00e250641ec3c9a5f269",
+    "scripts/run_sycophancy_codex.py": "df67b4ff2a1450cfc098831ceb8ed5bc8288c2771b651ca5b08a5b66fda76b1c",
+    "tests/unit/test_sycophancy_evaluation.py": "84978cebcb11c90fb6ba347a207a289662c97cdc523bbd443657c6ee358f3724",
+    "tests/unit/test_sycophancy_study.py": "5d771de558eddf91a0305003ba1a20314b2eb4067b9c89b7b01fa2d2985d4539",
+    "human/SYCOPHANCY_EVALUATION.ja.md": "b521be23ec138c7cbd40b0cba78f2c7180efbff61866ce0774dc4ce251677bae",
+    "review/sycophancy/2026-10-23-citation-contract-sources/MANIFEST.json": "bd7a7d1b02f0b1224bbd3184e991a64c8b80a3d40153f689ba1b977702def5ac"
+  },
+  "profile": {
+    "agent_type": "default",
+    "model": "gpt-6-astra",
+    "reasoning": "high",
+    "fresh_context": true
+  },
+  "role_contract": "Maintenance-capable default role; no experiment-bundle-only restrictions",
+  "read_only": true,
+  "authorization": "User requested Plan and modify after the Luna citation-format failure. Scoped maintenance and local tests authorized; preserve prior evidence; no new inference or live research changes."
+}

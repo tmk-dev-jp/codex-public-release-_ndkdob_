@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Novelty"
+  short_description: "Check whether a core hypothesis is novel."
+  default_prompt: "Use $audit-novelty to assess the active hypothesis against scoped sources and metadata."

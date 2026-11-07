@@ -1,0 +1,4 @@
+interface:
+  display_name: "Select Research Branch"
+  short_description: "Choose next branch from research memory."
+  default_prompt: "Use $select-research-branch to choose the next direction from compact research memory."

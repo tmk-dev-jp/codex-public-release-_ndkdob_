@@ -1,0 +1,4 @@
+interface:
+  display_name: "Monitor Experiment"
+  short_description: "Monitor experiment artifacts without LLM use."
+  default_prompt: "Use $monitor-experiment to check active run artifacts and report the next phase."

@@ -1,0 +1,16 @@
+{
+  "phase": "survey",
+  "scope_sha256": {
+    "maintenance/AUTONOMOUS_RESEARCH_IMPROVEMENTS.md": "4a1fa645b772be4a2926114a7883d599a5b887a372336d802b6a1a431d866c9a",
+    "automation/INDEPENDENT_JUDGMENT.md": "cee0bf2b973f0b7e53d76472187e7baf3b96d12a4113a805d6bdb3f0b680b4ea",
+    "README.md": "2b0e84b68fe976959d8136d3774b3cbf99717f38354b34128ca3da4e306b288e"
+  },
+  "read_only": true,
+  "authorization": "Current user requests expanded research, implementation and independent plan/implementation audits.",
+  "constraints": [
+    "No research-state changes",
+    "One worker for this phase",
+    "No retries or reviewer panel",
+    "Preserve other edits"
+  ]
+}

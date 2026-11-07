@@ -1,0 +1,15 @@
+{
+  "phase": "survey-memory",
+  "scope_sha256": {
+    "maintenance/hypothesis-stock-workflows/REQUEST.md": "5a50af0564ba80e73709edc41bf471778a824528d6a82e3f9a92d2c5178faa81"
+  },
+  "profile": {
+    "agent_type": "default",
+    "model": "gpt-6-astra",
+    "reasoning": "high",
+    "fresh_context": true
+  },
+  "role_contract": "Maintenance-capable default role; no experiment-bundle-only restrictions",
+  "read_only": true,
+  "authorization": "User requested at least ten hypothesis-stock agent workflows and an improvement proposal. Scoped primary-source web research and local review authorized; no implementation, model trial or research-state changes."
+}

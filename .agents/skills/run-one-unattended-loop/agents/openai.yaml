@@ -1,0 +1,6 @@
+interface:
+  display_name: "Run One Unattended Loop"
+  short_description: "Run one explicitly authorized loop without prompts."
+  default_prompt: "Use $run-one-unattended-loop to complete exactly one research experiment loop without intermediate user decisions."
+policy:
+  allow_implicit_invocation: false

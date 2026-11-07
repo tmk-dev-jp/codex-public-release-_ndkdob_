@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "policy": {
+    "scope": "Non-core training controls only: data.batch_size and train.optimizer.learning_rate.",
+    "reuse": "After a stage is calibrated, all later experiments at the same stage reuse the locked values for comparable conditions.",
+    "batch_size": "Probe powers of two deterministically, then keep one power-of-two margin below the largest passing value when possible.",
+    "learning_rate": "Probe a fixed optimizer-specific ladder deterministically, then keep one ladder step below the largest stable value when possible.",
+    "comparison": "Final comparisons must use locked controls, not per-experiment retuning."
+  },
+  "stages": {}
+}

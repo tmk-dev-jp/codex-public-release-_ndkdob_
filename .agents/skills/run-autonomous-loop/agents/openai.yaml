@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run Autonomous Loop"
+  short_description: "Operate one safe autonomous research step."
+  default_prompt: "Use $run-autonomous-loop to advance one operation according to the state router."

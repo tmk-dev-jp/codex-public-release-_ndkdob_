@@ -1,0 +1,20 @@
+{
+  "phase": "plan-audit",
+  "scope_sha256": {
+    "maintenance/hypothesis-stock-workflows/REQUEST.md": "5a50af0564ba80e73709edc41bf471778a824528d6a82e3f9a92d2c5178faa81",
+    "maintenance/hypothesis-stock-workflows/PLAN.reviewed.md": "60c21cb48d185d444d4804174b3aa87c7f9247d93425119dc6c89d57910da97c",
+    "maintenance/hypothesis-stock-workflows/SURVEY.md": "de2ac5716d8bc987c95b31bc021bf1fe672523dd253933811058f7a2961b44c3",
+    "maintenance/hypothesis-stock-workflows/REPOSITORY_REVIEW.md": "3866ac940f19f3d7fb003d762630b87c473a8102171956dc851052a5aee5a447",
+    "maintenance/hypothesis-stock-workflows/survey-generation/RESULT.md": "36c80034f1bc4ac9d76e028145217c85b9210f97741025c0b01537cf6651b309",
+    "maintenance/hypothesis-stock-workflows/survey-memory/RESULT.md": "95c37ef82832e6912a3ab335712da79cf9bc9e36eee3b6531cbd70f27fe240aa"
+  },
+  "profile": {
+    "agent_type": "default",
+    "model": "gpt-6-astra",
+    "reasoning": "high",
+    "fresh_context": true
+  },
+  "role_contract": "Maintenance-capable default role; no experiment-bundle-only restrictions",
+  "read_only": true,
+  "authorization": "User requested at least ten hypothesis-stock agent workflows and an improvement proposal. Scoped primary-source web research and local review authorized; no implementation, model trial or research-state changes."
+}

@@ -1,0 +1,21 @@
+{
+  "arms": [
+    {
+      "id": "reference",
+      "purpose": "<fair reference for the core hypothesis>",
+      "model": {"name": "mlp_classifier", "parameters": {"input_dim": 16, "hidden_dims": [32], "num_classes": 3, "dropout": 0.0}}
+    },
+    {
+      "id": "candidate",
+      "purpose": "<the coherent proposed method, not an unrelated improvement>",
+      "model": {"name": "<registered candidate model>", "parameters": {}}
+    }
+  ],
+  "conditions": [
+    {"id": "primary", "purpose": "<representative condition for the core claim>", "data_parameters": {}}
+  ],
+  "seeds": [42],
+  "primary": {"candidate": "candidate", "reference": "reference"},
+  "aggregation": "paired_mean",
+  "max_total_batches": 512
+}

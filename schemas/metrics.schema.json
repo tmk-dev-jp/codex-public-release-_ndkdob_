@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Aggregate experiment metrics",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "status",
+    "primary_metric",
+    "training",
+    "test"
+  ],
+  "properties": {
+    "experiment_id": {
+      "type": "string"
+    },
+    "status": {
+      "const": "completed"
+    },
+    "primary_metric": {
+      "type": "object",
+      "required": [
+        "name",
+        "value",
+        "direction",
+        "decision_mode",
+        "minimum_effect"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "number"
+        },
+        "direction": {
+          "enum": ["maximize", "minimize"]
+        },
+        "decision_mode": {
+          "enum": ["threshold", "trend"]
+        },
+        "minimum_effect": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "training": {
+      "type": "object"
+    },
+    "test": {
+      "type": "object"
+    }
+  }
+}

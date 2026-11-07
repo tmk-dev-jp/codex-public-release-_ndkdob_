@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Research Loop"
+  short_description: "Review scoped research workflow or skill defects."
+  default_prompt: "Use $review-research-loop to review the requested workflow or skills and report concrete findings."

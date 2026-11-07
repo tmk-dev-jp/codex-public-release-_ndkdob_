@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Experiment Plan"
+  short_description: "Check a locked plan for metric gaming before approval."
+  default_prompt: "Use $audit-experiment-plan on the active locked experiment."

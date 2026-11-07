@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Environment"
+  short_description: "Check local setup readiness."
+  default_prompt: "Use $prepare-environment to check this research template environment before initial setup."

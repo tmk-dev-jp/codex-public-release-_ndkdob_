@@ -1,0 +1,135 @@
+.
+├── AGENTS.md                         Codex向けの短い全体規則
+├── README.md                         Codex・開発者向け英語概要
+├── .codex/
+│   ├── config.toml                   HookとAgent数の上限
+│   ├── hooks.json                    ターン終了時の補助検査
+│   └── agents/                       計画・計画監査・三段階実装・結果評価のAgent
+├── .agents/skills/
+│   ├── set-subagent-defaults/        サブAgentの既定モデルと推論強度の設定・解除
+│   ├── compress-audit-material/      監査資料の上限超過を同じ工程内で圧縮して復帰
+│   ├── checkpoint-reproducibility/   再現用の最小限のコミットとタグ
+│   ├── migrate-research-project/     既存研究の読み取り範囲を確認して承認済み内容だけ移植
+│   ├── discuss-research-theme/       初期研究テーマ候補を人間と比較して選択
+│   ├── plan-experiment/              仮説と方法を固定する計画手順
+│   ├── configure-hypothesis-policy/  特定の仮説立案を禁止する設定
+│   ├── scan-research-landscape/      承認済み資料から研究ギャップを整理
+│   ├── replenish-research-hypotheses/ 無介入ループ開始時の仮説補充
+│   ├── query-paper-knowledge/         既存論文グラフから計画用query packを作成
+│   ├── research-paper-graph/          許可済み調査を論文知識グラフへ取込み
+│   ├── audit-novelty/                コア仮説の新規性を短く確認
+│   ├── select-research-branch/       研究記憶から次の研究枝を選択
+│   ├── run-autonomous-loop/          自律研究ループを一つの限定作業だけ進める
+│   ├── run-one-unattended-loop/      明示時だけ一件の実験ループを無介入で完了
+│   ├── run-one-agent-led-loop/       研究判断をサブエージェントへ委任して一件を完了
+│   ├── audit-experiment-plan/        指標ハック可能性を実装前に独立監査
+│   ├── review-experiment-plan/       ロック済み計画を日本語で人間レビュー
+│   ├── approve-or-revise-plan/       計画レビュー後の承認または下書き状態への戻し
+│   ├── revise-experiment-plan/       人間指摘に基づく計画修正
+│   ├── discuss-implementation-design/ モデル・loss・データ処理・評価実装の相談
+│   ├── implement-experiment/         最小実装と研究用コード方針
+│   ├── audit-experiment-implementation/ 実行前に計画忠実性・リーク・metric実装を独立監査
+│   ├── run-experiment/               決定的実験実行と中断経路の安全な復旧
+│   ├── audit-experiment-integrity/   結果出所・計画遵守・metric・リークの独立監査
+│   ├── review-experiment-result/     実験結果を日本語で人間レビュー
+│   ├── request-human-result-interpretation/ 人間が結果解釈を書くためのファイル作成
+│   ├── update-research-direction/    前実験を受けて研究方針を更新
+│   ├── maintain-research-memory/     知見・失敗方向・未解決問題を更新
+│   ├── monitor-experiment/           実験成果物をLLMなしで状態確認
+│   ├── select-next-experiment/       次の実験候補を選択して作成
+│   ├── evaluate-experiment/          集約結果の評価手順
+│   ├── debug-failure/                失敗時だけ使う最小修正手順
+│   ├── review-research-loop/         研究ループ契約の読み取り専用監査
+│   └── apply-research-loop-improvement/ 承認済み改善一件の適用と検証
+├── automation/
+│   ├── INDEPENDENT_JUDGMENT.md        ユーザー・エージェント間の迎合を抑える共通手順
+│   ├── SCIENTIFIC_CONTRIBUTION.md     出典の事実、科学的前進、対立予測の記録契約
+│   ├── ONE_CYCLE_PROMPT.md           一回に一つの限定作業だけ実行する短い指示
+│   ├── AUTONOMOUS_LOOP_PROMPT.md     自律ループ起動用プロンプト
+│   ├── UNATTENDED_LOOP_PROMPT.md     明示専用の無介入1ループ起動文
+│   └── AGENT_LED_LOOP_PROMPT.md      研究判断も委任する1ループ起動文
+├── configs/
+│   ├── templates/                    smoke・pilot・fullの設定ひな型
+│   └── experiments/                  実験IDごとの固定設定
+├── src/dl_research/
+│   ├── data/                         DataLoader基底クラスとfactory
+│   ├── models/                       Model基底クラスとfactory
+│   ├── training/                     途中出力をしないTrainer
+│   ├── evaluation/                   集約評価だけを返すTester
+│   ├── experiment/                   予算制限と実行統合
+│   └── cli/                          成功または失敗を一行だけ返すCLI
+├── research/
+│   ├── GOAL.md                       研究質問・判断・成功条件・研究全体を終える条件
+│   ├── PROPOSED_METHOD.md            比較基準ではなく提案手法の現在形
+│   ├── TRAINING_CONTROLS.json        学習率とバッチサイズの共通固定条件
+│   ├── STATE.json                    現在フェーズ・予算・承認・無人復帰用進捗
+│   ├── QUEUE.json                    次に実験化する仮説候補の優先一覧
+│   ├── CONTEXT.md                    Codex向けの自動生成された短い現在地
+│   ├── memory/                       継続利用する知見、失敗方向、未解決問題
+│   ├── ideas/IDEA_BANK.jsonl         次に試す仮説候補
+│   ├── novelty/NOVELTY_CHECKS.jsonl  新規性確認の短い記録
+│   ├── EVIDENCE.jsonl                主張へ結ぶ支持範囲付きの証拠台帳
+│   └── 各種台帳                       主張・根拠・情報源・意思決定
+├── maintenance/                      機能更新の引き継ぎ。研究記録とは分離
+│   ├── AI_DISCOVERY_IMPLEMENTATION_PLAN.md 科学的貢献の記録・検証に関する実装計画
+│   ├── AI_RESEARCH_LITERATURE_FOUNDATIONS.md 基礎論文7件の出典と限界
+│   ├── AI_RESEARCH_LITERATURE_RECENT.md 最近の8研究系列の出典と限界
+│   ├── AI_RESEARCH_LITERATURE_BENCHMARKS.md 能力評価4件の出典と限界
+│   ├── expanded-review/              追加調査、計画・実装の独立監査と対応記録
+│   ├── TASK.json                     編集する作業メモ
+│   └── HANDOFF.md                    次のセッションが読む短い入口
+├── experiments/
+│   ├── active/                       現在の一件
+│   ├── completed/                    完了済み詳細記録
+│   ├── aborted/                      明示的に中止した比較実験の記録。受理済み証拠とは別
+│   ├── LEDGER.jsonl                  完了実験の構造化台帳
+│   ├── DIGEST.md                     完了実験の一行要約
+│   └── templates/                    四見出しの実験記録ひな型
+├── data/
+│   ├── raw/                          変更しない原データ
+│   ├── processed/                    再生成可能な加工データ
+│   └── MANIFEST.example.json         データ概要ひな型
+├── artifacts/results/                集約評価指標、再現性情報、保存点、失敗情報
+├── review/
+│   ├── bundles/                      計画・実装・完全性監査・評価へ渡す閉じた圧縮資料
+│   └── completed/                    完了した評価資料
+├── paper_knowledge/
+│   ├── ENTRYPOINT.md                 Agent向けの疎結合な入口
+│   ├── HUMAN_ENTRYPOINT.md           人間向けグラフビューワーの入口
+│   ├── graph/                        検証可能な知識グラフ本体
+│   └── bin/pk.py                     取込み・照会・検証・viewer更新CLI
+├── references/
+│   ├── inbox/                        未整理のユーザー添付論文
+│   ├── originals/                    安定した原本
+│   ├── records/                      Abstract中心の構造化記録
+│   └── templates/REFERENCE.md        文献記録ひな型
+├── scripts/                          状態遷移・実行・実装差分・集計・Agent起動前の機械検査
+│   ├── evaluate_sycophancy.py         ユーザー・他エージェントへの迎合の診断と採点
+│   ├── sycophancy_study.py            方針比較の入力固定・呼出記録・人間による意味評価
+│   ├── run_sycophancy_codex.py        Luna maxの新しい文脈で固定比較を実行
+│   ├── compress_audit_material.py    情報を変えない圧縮と未受理の監査文の短縮検証
+│   ├── reproducibility_checkpoint.py 再現用の入力をコミットしてタグを作成
+│   ├── update_template.py            ローカル変更との衝突を検査してテンプレートを更新
+│   ├── migration_source.py           移行元.gitignoreを使った対象一覧と短い本文の読み取り
+│   ├── abort_comparison.py            人間の指示で失敗した比較実験を保存して閉じる
+│   ├── repair_context.py              修復Agentへの依頼書と親向けの短い状態確認
+│   └── set_agent_boundary.py         人間が手動で参照境界を設定・検査・復元
+├── tests/                            CPUで実行可能な単体・smokeテスト
+└── human/
+    ├── RESEARCH_AGENT_IMPROVEMENTS.ja.md 調査に基づく判断・証拠・復旧の改良
+    ├── AI_DISCOVERY_REVIEW.ja.md       19件の論文調査と新規発見・進歩性の実装
+    ├── SYCOPHANCY_EVALUATION.ja.md    圧力による結論変更と証拠に応じた更新の評価
+    ├── REPRODUCIBILITY.ja.md          再現用コミットとタグの手順
+    ├── UPDATE_TEMPLATE.ja.md          既存環境を保護するテンプレート更新手順
+    ├── README.ja.md                  日本語文書の案内
+    ├── QUICKSTART.ja.md              最短動作確認
+    ├── FIRST_EXPERIMENT.ja.md        前回実験なしで最初の実験を始める手順
+    ├── MIGRATE_RESEARCH.ja.md        既存研究ディレクトリからの移行手順
+    ├── RESEARCH_LOOP.ja.md           Codexドリブン研究ループの手順のみ
+    ├── AUTONOMOUS_LOOP.ja.md         Codex自律研究ループ手順
+    ├── UNATTENDED_LOOP.ja.md         明示専用・無介入1ループの手順
+    ├── AGENT_LED_LOOP.ja.md          研究判断を委任する別経路の手順
+    ├── MANUAL.ja.md                  完全運用手順
+    ├── PAPER_KNOWLEDGE_MANUAL.ja.md  論文知識グラフとビューワーの手順
+    ├── templates/                    人間向け結果解釈ファイルのひな型
+    └── TREE.ja.txt                   この構成説明

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Experiment Integrity"
+  short_description: "Verify experiment provenance before claims are accepted."
+  default_prompt: "Use $audit-experiment-integrity to audit the active trained experiment."

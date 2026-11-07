@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paper Knowledge Viewer</title>
+    <link rel="stylesheet" href="viewer.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="toolbar" aria-label="Graph controls">
+        <div class="brand-block">
+          <h1>Paper Knowledge</h1>
+          <p id="graphSummary">0 nodes · 0 edges</p>
+        </div>
+        <label class="search-box">
+          <span>Search</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="paper, method, dataset, claim">
+        </label>
+        <label class="file-box">
+          <span>Graph JSON</span>
+          <input id="fileInput" type="file" accept="application/json,.json">
+        </label>
+        <div class="button-row">
+          <button id="fitButton" type="button">Fit</button>
+          <button id="resetButton" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="left-panel" aria-label="Filters and results">
+          <div class="panel-section">
+            <h2>Node Types</h2>
+            <div id="kindFilters" class="check-grid"></div>
+          </div>
+          <div class="panel-section">
+            <label class="select-label">
+              <span>Edge Type</span>
+              <select id="edgeTypeSelect"></select>
+            </label>
+          </div>
+          <div class="panel-section">
+            <h2>Results</h2>
+            <div id="resultsList" class="results-list"></div>
+          </div>
+        </aside>
+
+        <section class="graph-panel" aria-label="Knowledge graph">
+          <canvas id="graphCanvas"></canvas>
+          <div id="legend" class="legend"></div>
+        </section>
+
+        <aside class="right-panel" aria-label="Selected node details">
+          <div class="panel-section">
+            <h2>Selection</h2>
+            <div id="detailsPane" class="details-pane"></div>
+          </div>
+          <div class="panel-section">
+            <h2>Connections</h2>
+            <div id="connectionsList" class="connections-list"></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="graph-data.js"></script>
+    <script src="viewer.js"></script>
+  </body>
+</html>
+

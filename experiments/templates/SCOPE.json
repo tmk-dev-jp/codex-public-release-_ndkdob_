@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.3",
+  "read_paths": [
+    "research/GOAL.md",
+    "experiments/DIGEST.md"
+  ],
+  "write_paths": [],
+  "test_paths": [],
+  "change_targets": [],
+  "planning_reads": [],
+  "implementation_entry_reads": [],
+  "notes": "Declare every write/test path once in change_targets with action, role, and expected symbols. Use intervention/support for write paths and verification for tests. Initial DRAFT creation reads no Python; budget planning_reads and implementation_entry_reads before opening Python."
+}

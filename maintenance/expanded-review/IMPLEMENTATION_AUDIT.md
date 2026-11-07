@@ -1,0 +1,24 @@
+Verdict: **warn — one material provenance gap remains.**
+
+1. **Medium: accepted output can diverge from the attributed worker judgment and still finalize.**
+   `accept_interpretation` writes the interpretation into `EXPERIMENT.md`, `EVALUATION.md`, and manifest metadata (`scripts/accept_human_interpretation.py:107–132`). Subsequent integrity checks bind the saved request, response, dispatch, intent and receipt, but do not bind those resulting evaluation artifacts (`scripts/decision_integrity.py:16–34,37–65`). Finalization validates conclusion structure, mechanical status and audit inputs, but does not compare the recorded conclusion with the attributed interpretation (`scripts/finalize_experiment.py:49–59,91–100`).
+
+   **Reproduction:** In a temporary project, accept the existing inconclusive interpretation fixture; change `Decision: inconclusive` to `Decision: reject` in `EXPERIMENT.md` and `EVALUATION.md`; leave the decision response, receipt and manifest unchanged. `next_agent_action(..., "evaluation", ...)` returns `action=finalize`, and `finalize_experiment` succeeds. The completed record says reject while the attributed response and manifest evaluation still say inconclusive.
+
+   This does not defeat the implemented interruption detector, but it leaves the source-attribution guarantee incomplete after acceptance. It requires neither receipt modification nor concurrent writers.
+
+   **Minimal correction:** Before evaluation routing/finalization, when the current evaluation source is `agent_research_decision`, require its provenance to match the completed receipt, its saved interpretation and `EVALUATION.md` to match the response’s exact interpretation bytes, and the copied conclusion/issues fields plus manifest decision to match that interpretation. Scope comparison to the copied sections so unrelated record updates remain possible. Explicit human replacement should update source attribution through its existing acceptance pathway. Add a focused test asserting that changed accepted output blocks routing/finalization without further mutation.
+
+The remainder substantially follows PLAN.md revision 2:
+
+- Agent interpretation acceptance requires a canonical current request, matching dispatch, bound worker, valid action, current facts/audits, and exact interpretation path/bytes. Direct valid calls enter the same acceptance operation; replay is rejected.
+- Intent precedes research mutations. The process-local acceptance context is private implementation machinery, not a source-label or public-flag bypass.
+- Shared `require_active` enforcement covers the inspected approval, interpretation, implementation gate, revision and finalization paths. Autonomous and unattended routers check integrity before their own writes; the agent-led router inherits that protection.
+- Tests meaningfully inject failures around representative writes and receipts for approval, revision, novelty and interpretation, including mismatched phases. Completed request/response/dispatch tampering and missing new intents are checked. Facts and accepted audit bytes are preserved during successful interpretation acceptance; ordinary plan revision retains its established audit invalidation behavior.
+- The scorer exports 36 prompts from 12 cases, with six cases per pressure group and balanced baseline verdicts. Opposite-preference pairs preserve evidence; decisive-evidence controls preserve preference. Correct-update credit requires both answers to match their differing gold verdicts. Constant, preference-following and always-changing strategies cannot earn full correctness. Malformed/incomplete batches are rejected, and protected inputs cannot be overwritten.
+- Gold verdict fields are excluded from exports. Citation coverage remains deliberately syntactic and can be maximized by citing every source. Cases use one simple threshold/missing-observation rule with mirrored user/peer variants, so coverage is narrow. The documented fresh-context protocol and explicit absence of model-efficacy claims are appropriate.
+- The implementation remains scoped and dependency-free; no unnecessary transaction framework, recovery engine or reviewer panel was introduced.
+
+**Independent checks:** All captured implementation-request hashes matched. I reran the focused suite with bytecode and pytest caching disabled: **97 passed**. I reproduced the finding in `/tmp`; no repository files were edited.
+
+**Reviewed scope:** Named request inputs and permitted transition/router helpers, within the 4,500-line code/fixture budget. I assessed the broader verification report but did not independently rerun its full suite or verify external literature. Coverage of unnamed mutation entry points remains unverified. Synthetic responses establish scorer behavior only; they provide no evidence of reduced model sycophancy.

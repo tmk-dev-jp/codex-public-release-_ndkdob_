@@ -1,0 +1,4 @@
+interface:
+  display_name: "Register Source Baseline"
+  short_description: "Register approved baseline sources."
+  default_prompt: "Use $register-source-baseline to register an approved baseline source and reading scope."

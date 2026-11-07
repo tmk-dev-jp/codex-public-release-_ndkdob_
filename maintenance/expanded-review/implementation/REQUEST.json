@@ -1,0 +1,25 @@
+{
+  "phase": "implementation",
+  "scope_sha256": {
+    "maintenance/expanded-review/PLAN.md": "aee6a2fcd6e4908ae0b9eb5487edc7744bb16e301142a58c92534e2b3ea56e7d",
+    "maintenance/expanded-review/PLAN_AUDIT.md": "f13a1d389774e7ebf5f390cf974cb5651fefe3b0941a0da80c91816d518d170f",
+    "maintenance/expanded-review/AUDIT_DISPOSITIONS.md": "3a39a7f776f30b49bbd5ca3a6faf41977df673ee20ca0765809f1900d27d4c06",
+    "scripts/research_decision.py": "83a8ac3610b4f615db750f3ffe8d59e7dd5f996157c8de9c7a8eb1de218ebcda",
+    "scripts/accept_human_interpretation.py": "359649ee175a2786b27bb57708c876ba3a5ca5e4ea44a035d699545a26f9be1c",
+    "scripts/approve_plan.py": "0c1e5e29bc11d948211cc31fc8629d8fd4f6b7620d9092039fc9bb4a8c8bd170",
+    "scripts/next_agent_led_loop_step.py": "81572c29b7ad3729e6ac7811a62120372a9907121945e08aacb0245407554188",
+    "scripts/workflow.py": "cf046787ed8136f9929a3d95545886399678c212c318b5bf0fb96c0f670b6ea1",
+    "scripts/next_unattended_loop_step.py": "790f9eafd486b96229d26741a2fa5d8cd6a606f0d41bbd417555aa16b16873af",
+    "scripts/next_autonomous_step.py": "48b6380b096ca41c8018136108511995b720c990909539023727c389c840254f",
+    "tests/unit/test_agent_led_loop.py": "ba2cc5af89e4c28c7ab02c6b864690f2750dc5239f2a183dba72202cc941fdac",
+    ".agents/skills/run-one-agent-led-loop/references/DECISIONS.md": "d7be666e11f79514e9420a00d718864c14e20c9ceb11f03a560ef92a0786324a"
+  },
+  "read_only": false,
+  "authorization": "Current user requests expanded research, implementation and independent plan/implementation audits.",
+  "constraints": [
+    "No research-state changes",
+    "One worker for this phase",
+    "No retries or reviewer panel",
+    "Preserve other edits"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "2.0",
+  "experiment": {
+    "id": "EXP-DEMO-PILOT",
+    "stage": "pilot",
+    "seed": 42,
+    "deterministic": true,
+    "review_mode": "independent",
+    "output_dir": "artifacts/results/EXP-DEMO-PILOT",
+    "baseline_id": null,
+    "queue_id": "Q-001"
+  },
+  "decision": {
+    "primary_metric": "test_accuracy",
+    "direction": "maximize",
+    "mode": "threshold",
+    "minimum_effect": 0.01
+  },
+  "data": {
+    "name": "synthetic_classification",
+    "batch_size": 32,
+    "num_workers": 0,
+    "parameters": {
+      "num_samples": 512,
+      "input_dim": 16,
+      "num_classes": 3,
+      "train_fraction": 0.7,
+      "validation_fraction": 0.15,
+      "noise": 0.25
+    }
+  },
+  "model": {
+    "name": "mlp_classifier",
+    "parameters": {
+      "input_dim": 16,
+      "hidden_dims": [
+        32
+      ],
+      "num_classes": 3,
+      "dropout": 0.0
+    }
+  },
+  "train": {
+    "epochs": 3,
+    "device": "auto",
+    "optimizer": {
+      "name": "adamw",
+      "learning_rate": 0.01,
+      "weight_decay": 0.0,
+      "momentum": 0.9
+    },
+    "loss": "cross_entropy",
+    "amp": false,
+    "gradient_clip_norm": 1.0,
+    "early_stopping_patience": 2,
+    "max_train_batches": 12,
+    "max_validation_batches": 5,
+    "checkpoint_metric": "loss",
+    "checkpoint_mode": "min"
+  },
+  "test": {
+    "device": "auto",
+    "max_batches": 5,
+    "checkpoint": "best.pt"
+  }
+}

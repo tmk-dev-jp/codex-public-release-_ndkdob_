@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Experiment configuration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "experiment",
+    "data",
+    "model",
+    "train",
+    "test"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "experiment": {
+      "type": "object",
+      "required": [
+        "id",
+        "stage",
+        "seed",
+        "output_dir"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "stage": {
+          "enum": [
+            "smoke",
+            "pilot",
+            "full"
+          ]
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_dir": {
+          "type": "string"
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "properties": {"seed": {"type": "integer", "minimum": 0}}
+    },
+    "model": {
+      "type": "object"
+    },
+    "train": {
+      "type": "object"
+    },
+    "test": {
+      "type": "object"
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["arms", "conditions", "seeds", "primary", "aggregation", "max_total_batches"],
+      "properties": {
+        "arms": {"type": "array", "minItems": 2, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["id", "purpose", "model"],
+          "properties": {
+            "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{0,23}$"},
+            "purpose": {"type": "string", "minLength": 1},
+            "model": {"type": "object", "required": ["name", "parameters"]},
+            "loss": {"type": "string", "minLength": 1}
+          }
+        }},
+        "conditions": {"type": "array", "minItems": 1, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["id", "purpose", "data_parameters"],
+          "properties": {
+            "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{0,23}$"},
+            "purpose": {"type": "string", "minLength": 1},
+            "data_parameters": {"type": "object"}
+          }
+        }},
+        "seeds": {"type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "integer", "minimum": 0}},
+        "primary": {"type": "object", "additionalProperties": false,
+          "required": ["candidate", "reference"],
+          "properties": {"candidate": {"type": "string"}, "reference": {"type": "string"}}},
+        "aggregation": {"const": "paired_mean"},
+        "max_total_batches": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

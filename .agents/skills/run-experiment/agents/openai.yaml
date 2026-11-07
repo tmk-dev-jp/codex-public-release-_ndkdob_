@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run Experiment"
+  short_description: "Run one locked experiment through deterministic scripts."
+  default_prompt: "Use $run-experiment to execute the approved active experiment through its deterministic runner."

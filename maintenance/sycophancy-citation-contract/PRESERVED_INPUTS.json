@@ -1,0 +1,10 @@
+{
+  "research/STATE.json": "5b37bc076b74dd3757f92d37acef6646c91c47e3ad7246ae11236549268c4340",
+  "research/GOAL.md": "a8f5645dfdcf7fdcbac5813ca59c5391e062cb03cfcc396b7a999a1e5d501e55",
+  "research/QUEUE.json": "e2bbd51ffa50e20b6f1701bad63fd187138d9912f595542d84c36bedeb598511",
+  "research/ideas/IDEA_BANK.jsonl": "fde34e94dda55a05016c7bf15c82602d791a0ca97a5837eef26c436553774b17",
+  "research/novelty/NOVELTY_CHECKS.jsonl": "25659521f2bfe2e3ed74e2a2f67527adbb8a5298c45e2d38d4c67c8d4563bb44",
+  "tests/fixtures/sycophancy/cases.json": "a35e8d0608ad036403495d750c00f37c67769cb0e9cfaa03f158fd5792dad3bc",
+  "automation/INDEPENDENT_JUDGMENT.md": "cee0bf2b973f0b7e53d76472187e7baf3b96d12a4113a805d6bdb3f0b680b4ea",
+  "automation/SCIENTIFIC_CONTRIBUTION.md": "dd951f8fe8ab2886e171af69c18fd902bb86a78599eed1978728770b62e03a2b"
+}

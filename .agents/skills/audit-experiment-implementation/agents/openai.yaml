@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Experiment Implementation"
+  short_description: "Verify locked experiment code before pilot or full execution."
+  default_prompt: "Use $audit-experiment-implementation on the active experiment."

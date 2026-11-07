@@ -1,0 +1,9 @@
+{
+  "worker": "/root/expanded_implementation_audit",
+  "profile": "gpt-6-astra/high",
+  "fresh_context": true,
+  "read_only": true,
+  "reports": [
+    "IMPLEMENTATION_AUDIT.md"
+  ]
+}

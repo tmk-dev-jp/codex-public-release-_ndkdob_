@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/.codex/hooks/stop_validate.py\"",
+            "commandWindows": "powershell -NoProfile -Command \"$root = (git rev-parse --show-toplevel); py -3 (Join-Path $root '.codex/hooks/stop_validate.py')\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
