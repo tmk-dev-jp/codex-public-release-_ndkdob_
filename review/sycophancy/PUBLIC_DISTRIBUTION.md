@@ -1,29 +1,27 @@
 # Public distribution scope
 
-This template excludes the historical evaluation records in:
+The public template distributes runtime code, configuration templates, fixtures,
+tests, skills and operational guides. Development history is kept locally and
+excluded from Git tracking using `.gitignore`.
 
-- `review/sycophancy/2026-10-23-luna-max-guidance-v2/`
-- `review/sycophancy/2026-10-23-qwen38-guidance-v2/`
+| Excluded scope | Reason |
+| --- | --- |
+| `maintenance/*`, except `AGENTS.md` and `TASK.template.json` | Local handoffs, improvement surveys, design plans, audit requests/reports, dispatch records, historical hashes and verification summaries |
+| `review/sycophancy/*/` | Generated evaluation runs, raw/encoded logs, frozen manifests and historical source snapshots |
+| `human/AI_DISCOVERY_REVIEW.ja.md` | Historical development survey and implementation report |
+| `human/HYPOTHESIS_STOCK_WORKFLOWS.ja.md` | Unimplemented development proposal and review history |
+| `human/RESEARCH_AGENT_IMPROVEMENTS.ja.md` | Historical improvement survey and verification report |
 
-Those records included machine-specific runtime metadata and encoded logs.
-Their frozen inputs, dispatches, responses, transport logs, diagnostics and
-provenance manifests are not part of the public distribution. Historical result
-summaries remain as reports of prior work, not results independently verifiable
-from this template. No historical results or hashes have been regenerated. Actual temporary host
-paths in maintenance summaries have been replaced with descriptive placeholders.
-Runnable examples and deliberate invalid-path fixtures remain unchanged.
+[PUBLIC_EXCLUSIONS.txt](../../PUBLIC_EXCLUSIONS.txt) lists the previously tracked
+files excluded in this cleanup. Future generated files in the scopes above are
+also ignored. Ignored files may still exist in a developer's working directory;
+use Git-tracked files or `git archive HEAD` for distribution.
 
-`maintenance/sycophancy-citation-contract/PRESERVED_INPUTS.json` retains only
-the eight original entries for files still distributed. The 448 entries for
-excluded records were removed. Historical plans, audit reports and summaries
-mentioning 456 protected files describe the original scope, not the current
-hash inventory. Original audit reports, locked plans and their recorded hashes remain unchanged.
+The historical Luna and Qwen evaluation directories are not distributed. No past
+results or hashes were regenerated. Historical designs, audits and source snapshots
+are not required to run a new study and cannot be reverified from this template.
+The evaluation guide documents current commands rather than past run outcomes.
 
-The citation-contract source archive remains distributed. Its six source hashes
-can still be checked, but its historical frozen-manifest identifier refers to an
-omitted manifest. It is not a complete replay environment or evidence that the
-omitted responses can be revalidated here.
-
-The evaluator, runner, fixtures, tests and skills remain available for new studies.
-Use a new run directory; do not interpret documentation examples as a continuation
-of an omitted historical run.
+`maintenance/AGENTS.md`, `maintenance/TASK.template.json` and the handoff script
+remain available. Handoff snapshots are created locally on demand. Research state,
+experiment controls, runtime validation, fixtures and tests are unchanged.

@@ -71,13 +71,8 @@
 │   ├── EVIDENCE.jsonl                主張へ結ぶ支持範囲付きの証拠台帳
 │   └── 各種台帳                       主張・根拠・情報源・意思決定
 ├── maintenance/                      機能更新の引き継ぎ。研究記録とは分離
-│   ├── AI_DISCOVERY_IMPLEMENTATION_PLAN.md 科学的貢献の記録・検証に関する実装計画
-│   ├── AI_RESEARCH_LITERATURE_FOUNDATIONS.md 基礎論文7件の出典と限界
-│   ├── AI_RESEARCH_LITERATURE_RECENT.md 最近の8研究系列の出典と限界
-│   ├── AI_RESEARCH_LITERATURE_BENCHMARKS.md 能力評価4件の出典と限界
-│   ├── expanded-review/              追加調査、計画・実装の独立監査と対応記録
-│   ├── TASK.json                     編集する作業メモ
-│   └── HANDOFF.md                    次のセッションが読む短い入口
+│   ├── TASK.json                     編集する作業メモ（ローカル生成・Git管理外）
+│   └── HANDOFF.md                    次のセッションが読む短い入口（ローカル生成・Git管理外）
 ├── experiments/
 │   ├── active/                       現在の一件
 │   ├── completed/                    完了済み詳細記録
@@ -116,8 +111,6 @@
 │   └── set_agent_boundary.py         人間が手動で参照境界を設定・検査・復元
 ├── tests/                            CPUで実行可能な単体・smokeテスト
 └── human/
-    ├── RESEARCH_AGENT_IMPROVEMENTS.ja.md 調査に基づく判断・証拠・復旧の改良
-    ├── AI_DISCOVERY_REVIEW.ja.md       19件の論文調査と新規発見・進歩性の実装
     ├── SYCOPHANCY_EVALUATION.ja.md    圧力による結論変更と証拠に応じた更新の評価
     ├── REPRODUCIBILITY.ja.md          再現用コミットとタグの手順
     ├── UPDATE_TEMPLATE.ja.md          既存環境を保護するテンプレート更新手順

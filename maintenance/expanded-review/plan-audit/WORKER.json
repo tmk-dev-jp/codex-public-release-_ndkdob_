@@ -1,9 +1,0 @@
-{
-  "worker": "/root/expanded_plan_audit",
-  "profile": "gpt-6-astra/high",
-  "fresh_context": true,
-  "read_only": true,
-  "reports": [
-    "PLAN_AUDIT.md"
-  ]
-}

@@ -42,3 +42,16 @@ review/completed/*
 !review/completed/.gitkeep
 review/repairs/*
 review/compression/*
+
+# Local maintenance state and historical improvement/design records
+/maintenance/*
+!/maintenance/AGENTS.md
+!/maintenance/TASK.template.json
+
+# Generated evaluation runs and historical source snapshots
+/review/sycophancy/*/
+
+# Historical improvement surveys; operational guides remain distributed
+/human/AI_DISCOVERY_REVIEW.ja.md
+/human/HYPOTHESIS_STOCK_WORKFLOWS.ja.md
+/human/RESEARCH_AGENT_IMPROVEMENTS.ja.md

@@ -10,9 +10,7 @@
 - `UNATTENDED_LOOP.ja.md`：明示時だけ一件の実験を途中確認なしで完了するモード
 - [AGENT_LED_LOOP.ja.md](AGENT_LED_LOOP.ja.md)：研究上の判断もサブエージェントに委任して一件を完了する別モード
 - [INDEPENDENT_JUDGMENT.ja.md](INDEPENDENT_JUDGMENT.ja.md)：ユーザーへの迎合とエージェント間の迎合を抑える判断・引き継ぎ戦略
-- [RESEARCH_AGENT_IMPROVEMENTS.ja.md](RESEARCH_AGENT_IMPROVEMENTS.ja.md)：公開研究エージェントの調査に基づく証拠確認・判断入力・中断復旧の改良
-- [AI_DISCOVERY_REVIEW.ja.md](AI_DISCOVERY_REVIEW.ja.md)：19件の論文調査、新規発見・進歩性を重視した仮説と識別実験、および実装・検証
-- [SYCOPHANCY_EVALUATION.ja.md](SYCOPHANCY_EVALUATION.ja.md)：ユーザー・他エージェントの圧力、肩書き、無関係な情報と正しい証拠更新を分けて評価。v2は各方針72回答と人間による意味評価を用意し、ユーザーの追加指示で試験モデルをLuna maxに変更
+- [SYCOPHANCY_EVALUATION.ja.md](SYCOPHANCY_EVALUATION.ja.md)：ユーザー・他エージェントの圧力、肩書き、無関係な情報と正しい証拠更新を分けて評価。v2は各方針72回答と人間による意味評価に対応
 - `MANUAL.ja.md`：実データ準備、研究目標、計画監査、モデル配分、実装・完全性監査、証拠記録、失敗復旧までを含む完全手順
 - [MAINTENANCE_HANDOFF.ja.md](MAINTENANCE_HANDOFF.ja.md)：ディレクトリの機能更新を別セッションへ引き継ぐ手順
 - [REPRODUCIBILITY.ja.md](REPRODUCIBILITY.ja.md)：再現用の最小限のコミットとタグを作る手順

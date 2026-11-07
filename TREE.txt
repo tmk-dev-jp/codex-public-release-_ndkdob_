@@ -82,15 +82,10 @@
 │       ├── AGENTS.md
 │       └── HYPOTHESIS_POLICY.md
 ├── maintenance/                      # Separate maintenance handoff, not research state
-│   ├── AI_DISCOVERY_IMPLEMENTATION_PLAN.md # Literature-grounded contribution contract plan
-│   ├── AI_RESEARCH_LITERATURE_FOUNDATIONS.md # Seven foundational papers
-│   ├── AI_RESEARCH_LITERATURE_RECENT.md # Eight recent work families
-│   ├── AI_RESEARCH_LITERATURE_BENCHMARKS.md # Four capability evaluations
-│   ├── expanded-review/              # Additional source survey, plan and independent audits
 │   ├── TASK.template.json
-│   ├── TASK.json                      # Editable current work notes, created on demand
-│   ├── HANDOFF.json                   # Script-generated fingerprints
-│   └── HANDOFF.md                     # Bounded entry for the next session
+│   ├── TASK.json                      # Editable current work notes, created on demand; local, Git-ignored
+│   ├── HANDOFF.json                   # Script-generated fingerprints; local, Git-ignored
+│   └── HANDOFF.md                     # Bounded entry for the next session; local, Git-ignored
 ├── experiments/
 │   ├── AGENTS.md
 │   ├── active/                       # At most one active experiment
@@ -170,8 +165,6 @@
 │   ├── unit/
 │   └── smoke/
 └── human/
-    ├── RESEARCH_AGENT_IMPROVEMENTS.ja.md # Literature-informed decision and recovery changes
-    ├── AI_DISCOVERY_REVIEW.ja.md       # Nineteen-paper discovery review and implementation
     ├── SYCOPHANCY_EVALUATION.ja.md     # User/peer-pressure diagnostic protocol
     ├── REPRODUCIBILITY.ja.md
     ├── UPDATE_TEMPLATE.ja.md
